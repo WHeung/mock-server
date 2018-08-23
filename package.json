@@ -1,0 +1,9 @@
+{
+  "name": "mock-server",
+  "version": "0.0.1",
+  "description": "a mock server is used to mock data and transfer ajax request",
+  "main": "index.js",
+  "repository": "git@github.com:WHeung/mock-server.git",
+  "author": "heung <l_wheung@163.com>",
+  "license": "MIT"
+}
