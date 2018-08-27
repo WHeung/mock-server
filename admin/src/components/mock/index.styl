@@ -1,0 +1,139 @@
+$leftBlue = #6699CC
+$leftBg = #fff
+$centerBlue = #479AC7
+$centerBg = #f8f8f8
+$rightBlue = #336699
+$rightBg = #eee
+.wrap
+  position relative
+  height calc(100vh - 60px)
+  display flex
+.conItem
+  flex 0 0 auto
+  height 100%
+  box-sizing border-box
+.left
+  width 220px
+  border-right 1px solid #ddd
+  background $leftBg
+.mockItem
+  margin-top 10px
+  margin-left 10px
+  color #444
+  height 40px
+  line-height 40px
+  padding-right 10px
+  font-size 18px
+  cursor pointer
+  padding-left 20px
+  border 1px solid #ddd
+  border-right 0
+  background $centerBg
+  transition all .3s linear
+  &.active
+    position relative
+    color $leftBlue
+    border 1px solid $leftBlue
+    border-right 0px
+    transform translateX(3px)
+  .name
+    line-height 20px
+    height 20px
+    padding-top 4px
+    overflow hidden
+    text-overflow ellipsis
+  .url
+    font-size 12px
+    color #999
+    line-height 12px
+    height 12px
+    overflow hidden
+    text-overflow ellipsis
+.center
+  width 302px
+  border-right 1px solid #ddd
+  background $centerBg
+.optionItem
+  border 1px solid #ddd
+  border-right 0
+  cursor pointer 
+  line-height 30px 
+  margin 10px 0 0 12px
+  position relative 
+  transition all ease .2s
+  background $leftBg
+  &.active
+    position relative
+    color $centerBlue
+    border 1px solid $centerBlue
+    border-right 0px
+    transform translateX(3px)
+  .key
+    padding 0 10px
+    font-weight 700
+    border-bottom 1px solid #ddd
+    font-size 18px
+  .path
+    padding 0 10px
+    color #999
+    background #f6f6f6
+  .desc
+    padding:0 10px
+
+.right
+  flex 1 0 auto
+  background $rightBg
+.top
+  padding 10px
+  line-height 30px
+  color #fff
+  border-bottom 1px solid #ddd
+  background #fff
+  button
+    text-align center
+    width 100%
+    height 30px
+    color #fff
+    font-size 15px
+    font-weight 600
+    border-radius 3px
+  .addMock
+    background $leftBlue
+  .addOtion
+    background $centerBlue
+  .rightBtn
+    width auto
+    padding 0 15px
+    margin-right 10px
+    background $rightBlue
+.itemList, .mockDetail
+  height calc(100vh - 112px)
+  overflow-y auto
+
+.inpuCon
+  height 28px
+  padding-left 10px
+  display flex
+  align-items center
+  width 300px
+  border 1px solid #ddd
+  background #fff
+  &.readonly
+    background #ddd
+  input
+    width 100%
+.saveBtn
+  height 30px
+  line-height 30px
+  padding 0 15px
+  font-size 14px
+  border 1px solid $rightBlue
+  background $rightBlue
+  color #fff
+  border-radius 5px
+  cursor pointer
+  transition all ease .2s
+  font-weight 600
+
+
+    
