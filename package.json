@@ -5,5 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:WHeung/mock-server.git",
   "author": "heung <l_wheung@163.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  }
 }
