@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from './index.styl'
 import InputItem from './commons/InputItem'
 import MockForm from './commons/AddMock'
+import OptionForm from './commons/AddOptionForm'
 import { Modal, Button, Form, Input } from 'antd'
 import CallApi from '@/util/ajax'
 
@@ -32,12 +33,18 @@ class Mock extends Component {
   componentDidMount () {
   }
   // event: 事件
-  addMock = () => {
-    console.log(111)
-    this.setState({ modal: 'addMock' })
+  showModal = (type) => {
+    this.setState({ modal: type })
   }
   handleCloseModal = () => {
     this.setState({ modal: '' })
+  }
+  handleSwitchMock = (index) => {
+    this.setState({ curMockIndex: index })
+    console.log(this.state.curOptionIndex)
+  }
+  handleSwitchOption = (index) => {
+    this.setState({ curOptionIndex: index })
   }
   handleSaveMock = (e) => {
     e.preventDefault()
@@ -46,8 +53,6 @@ class Mock extends Component {
   }
   handleInput = (e) => {
     console.log(e)
-    // const mockForm = Object.assign({}, this.state.mockForm, { [key]: val })
-    // this.setState({ mockForm: mockForm })
   }
   // html
   render() {
@@ -56,7 +61,7 @@ class Mock extends Component {
     return (
       <div className={styles.wrap}>
         <div className={styles.conItem +' '+styles.left}>
-          <div className={styles.top} onClick={this.addMock}>
+          <div className={styles.top} onClick={this.showModal.bind(this, 'addMock')}>
             <button className={styles.addMock}>Add Mock</button>
           </div>
           <div className={styles.itemList}>
@@ -64,7 +69,7 @@ class Mock extends Component {
               return (
                 <div title={mock.url}
                   className={styles.mockItem+' '+(this.state.curMockIndex === index && styles.active)}
-                  click="switchMock(mock)" key={index}>
+                  onClick={this.handleSwitchMock.bind(this, index)} key={index}>
                   <div className={styles.name}>{mock.name}</div>
                   <div className={styles.url}>{mock.url}</div>
                 </div>
@@ -73,7 +78,7 @@ class Mock extends Component {
           </div>
         </div>
         <div className={styles.conItem +' '+styles.center}>
-          <div className={styles.top} click="addOption">
+          <div className={styles.top} onClick={this.showModal.bind(this, 'addOption')}>
             <button className={styles.addOtion}>Add Option</button>
           </div>
           <div className={styles.itemList}>
@@ -81,7 +86,7 @@ class Mock extends Component {
               return (
                 <div  title={option.key}
                   className={styles.optionItem+' '+(this.state.curOptionIndex === index && styles.active)}
-                  click="switchMockData(curMock, option)" key={index}>
+                  onClick={this.handleSwitchOption.bind(this, index)} key={index}>
                   <div className={styles.key}>{option.key}</div>
                   <div className={styles.desc}>{option.desc}</div>
                   <div className={styles.path}>{option.path}</div>
@@ -118,8 +123,15 @@ class Mock extends Component {
             </InputItem>
           </div>
         </div>
-        <Modal title="Add Mock" visible={this.state.modal === 'addMock'} footer={null} onCancel={this.handleCloseModal}>
+        <Modal title="Add Mock"
+          visible={this.state.modal === 'addMock'} destroyOnClose={true}
+          footer={null} onCancel={this.handleCloseModal}>
           <MockForm></MockForm>
+        </Modal>
+        <Modal title="Add Option"
+          visible={this.state.modal === 'addOption'} destroyOnClose={true}
+          footer={null} onCancel={this.handleCloseModal}>
+          <OptionForm></OptionForm>
         </Modal>
       </div>
       

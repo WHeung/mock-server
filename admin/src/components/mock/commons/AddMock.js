@@ -16,32 +16,37 @@ class mockForm extends Component {
   }
   handleSaveMock = (e) => {
     e.preventDefault()
-    const value = this.props.form.getFieldsValue()
-    console.log(value)
-    CallApi('UPDATE_MOCK', value)
+    this.props.form.validateFields((err, fieldsValue) => {
+      console.log(fieldsValue)
+      if (err) return
+      CallApi('UPDATE_MOCK')
+    })
     return
   }
   render() {
     const { getFieldDecorator } = this.props.form
+    const validConfig = {
+      rules: [{required: true, message: '不能为空!'}]
+    }
     return (
       <Form onSubmit={this.handleSaveMock}>
         <Form.Item label="name" labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
-          {getFieldDecorator('name')(
+          {getFieldDecorator('name', validConfig)(
             <Input />
           )}
         </Form.Item>
         <Form.Item label="describe" labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
-          {getFieldDecorator('describe')(
+          {getFieldDecorator('describe', validConfig)(
             <Input />
           )}
         </Form.Item>
         <Form.Item label="url" labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
-          {getFieldDecorator('url')(
+          {getFieldDecorator('url', validConfig)(
             <Input />
           )}
         </Form.Item>
         <Form.Item label="method" labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
-          {getFieldDecorator('method')(
+          {getFieldDecorator('method', validConfig)(
             <Input />
           )}
         </Form.Item>
