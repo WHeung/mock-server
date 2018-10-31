@@ -1,37 +1,68 @@
 <div class="wrap">
-  <div class="conItem +' '+styles.left">
+  <div class="conItem left">
     <div class="top">
       <button class="addMock">Add Mock</button>
     </div>
     <div class="itemList">
           <div title={mock.url}
-            class="mockItem+' '+(this.state.curMockIndex === index && styles.active)">
+            [ngClass]="['mockItem']"><!--, { active: this.curMockIndex === index}-->
             <div class="name">mock.name</div>
             <div class="url">mock.url</div>
           </div>
     </div>
   </div>
-  <!-- <div class="conItem +' '+styles.center">
+  <div class="conItem center">
     <div class="top">
       <button class="addOtion">Add Option</button>
     </div>
     <div class="itemList">
-          <div  title={option.key}
-            class="optionItem+' '+(this.state.curOptionIndex === index && styles.active)">
-            <div class="key">{{option.key}</div>
-            <div class="desc">{{option.desc}</div>
-            <div class="path">{{option.path}</div>
-          </div>
+      <div title={option.key} [ngClass]="['optionItem']"><!--, { active: this.curOptionIndex === index}-->
+        <div class="key">{{option.key}</div>
+        <div class="desc">{{option.desc}</div>
+        <div class="path">{{option.path}</div>
+      </div>
     </div>
   </div>
-  <div class="conItem +' '+styles.right">
+  <div class="conItem right">
     <div class="top" click="addMock">
-      <button class="rightBtn +' '+ styles.active">Option edit</button>
+      <button class="rightBtn active">Option edit</button>
       <button class="rightBtn">Option template</button>
       <button class="rightBtn">Response data</button>
       <button class="rightBtn">Open in browser</button>
     </div>
     <div class="mockDetail">
+      <form>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="2">name</nz-form-label>
+          <nz-form-control [nzSpan]="4">
+              <input nz-input name="name" disabled>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="2">desc</nz-form-label>
+          <nz-form-control [nzSpan]="4">
+              <input nz-input name="desc">
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="2">url</nz-form-label>
+          <nz-form-control [nzSpan]="4">
+              <input nz-input name="url">
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="2">methods</nz-form-label>
+          <nz-form-control [nzSpan]="4">
+              <input nz-input name="methods">
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="2">dataType</nz-form-label>
+          <nz-form-control [nzSpan]="4">
+              <input nz-input name="dataType">
+          </nz-form-control>
+        </nz-form-item>
+      </form>
     </div>
-  </div> -->
+  </div>
 </div>

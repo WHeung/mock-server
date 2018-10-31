@@ -6,7 +6,7 @@ $rightBlue = #336699
 $rightBg = #eee
 .wrap
   position relative
-  height calc(100vh - 60px)
+  height calc(100vh - 50px)
   display flex
 .conItem
   flex 0 0 auto
@@ -109,19 +109,14 @@ $rightBg = #eee
 .itemList, .mockDetail
   height calc(100vh - 112px)
   overflow-y auto
+.mockDetail
+  padding 20px 20px 0
+  nz-form-item
+    margin-bottom 10px
+    nz-form-label
+      text-align left
+      font-size 18px
 
-.inpuCon
-  height 28px
-  padding-left 10px
-  display flex
-  align-items center
-  width 300px
-  border 1px solid #ddd
-  background #fff
-  &.readonly
-    background #ddd
-  input
-    width 100%
 .saveBtn
   height 30px
   line-height 30px
