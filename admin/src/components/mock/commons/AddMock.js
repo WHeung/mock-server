@@ -19,7 +19,7 @@ class mockForm extends Component {
     this.props.form.validateFields((err, fieldsValue) => {
       console.log(fieldsValue)
       if (err) return
-      CallApi('UPDATE_MOCK')
+      CallApi('UPDATE_MOCK', fieldsValue)
     })
     return
   }
