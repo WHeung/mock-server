@@ -1,0 +1,20 @@
+{
+  "name": "test1",
+  "describe": "/test1",
+  "url": "/test1",
+  "method": "get",
+  "dataType": "json",
+  "responseOptions": {
+    "one": {
+      "desc": "one",
+      "path": "test1/one.json"
+    },
+    "two": {
+      "desc": "two",
+      "path": "test1/two.json"
+    }
+  },
+  "responseKey": [
+    "one"
+  ]
+}

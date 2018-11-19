@@ -1,0 +1,8 @@
+{
+  "data": [{
+    "content": "hello <%= 'ejs' %> <%= query.xxx %> <%= params.id %>"
+  }],
+  "status": {
+    "code": 200
+  }
+}

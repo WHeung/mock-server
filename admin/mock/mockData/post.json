@@ -1,0 +1,1 @@
+{"name":"post","describe":"post data","url":"/post","method":"POST","dataType":"JSON","responseKey":"firstKey","responseOptions":{"firstKey":{"desc":"get post query","path":"./post/firstData.json"},"secondKey":{"desc":"secondKey","path":"post/secondKey.json"}}}
