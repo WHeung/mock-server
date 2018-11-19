@@ -10,14 +10,14 @@ class mockForm extends Component {
         name: 'a',
         describe: '',
         url: '',
-        method: ''
+        method: '',
+        dataType: ''
       }
     }
   }
   handleSaveMock = (e) => {
     e.preventDefault()
     this.props.form.validateFields((err, fieldsValue) => {
-      console.log(fieldsValue)
       if (err) return
       CallApi('UPDATE_MOCK', fieldsValue)
     })
@@ -47,6 +47,11 @@ class mockForm extends Component {
         </Form.Item>
         <Form.Item label="method" labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
           {getFieldDecorator('method', validConfig)(
+            <Input />
+          )}
+        </Form.Item>
+        <Form.Item label="dataType" labelCol={{ span: 5 }} wrapperCol={{ span: 12 }}>
+          {getFieldDecorator('dataType', validConfig)(
             <Input />
           )}
         </Form.Item>

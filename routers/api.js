@@ -40,7 +40,7 @@ router.get('/list', async function (ctx, next) { // 获取列表
 })
 
 router.post('/update_mock', async (ctx, next) => { // 更新mock
-  const params = ctx.params
+  const params = ctx.request.body
   if (!params.name || !params.url || !params.method || !params.dataType) {
     ctx.throw(200, { code: 30001, message: "params no exist"})
   }
