@@ -7,6 +7,11 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3018"
+    }
+  },
   "dependencies": {
     "antd": "^3.10.1",
     "autoprefixer": "7.1.6",
